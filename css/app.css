@@ -1,3 +1,24 @@
 body{
-  background-color: red;
+  background-color: white;
+}
+
+#messages{
+
+}
+
+.grid{
+  height: 700px;
+  width: 700px;
+  border:1px solid black;
+}
+
+.box{
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
+  height: 165px;
+  width: 165px;
+  border: 1px solid black;
+  float: left;
 }
