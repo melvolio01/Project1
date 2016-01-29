@@ -8,8 +8,9 @@ body{
 
 .grid{
   height: 700px;
-  width: 700px;
+  width: 1000px;
   border:1px solid black;
+  margin: 0 auto;
 }
 
 .box{
@@ -17,8 +18,9 @@ body{
   padding-right: 2px;
   padding-bottom: 2px;
   padding-left: 2px;
-  height: 165px;
-  width: 165px;
+  height: 160px;
+  width: 220px;
   border: 1px solid black;
   float: left;
+  margin: 0 auto;
 }

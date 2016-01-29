@@ -1,29 +1,41 @@
-// console.log("Aye aye captain");
 
-// function startGame(){
-//   if (Math.random()<0.5){
-//     document.turn = "Player 1";  
-//   }
-//   else{
-//     document.turn = "Player 2"; 
-//   }
-//   document.winner = null;
-//   messageBox(document.turn + " goes next");
-// }
-// function messageBox(msg){
-//   document.getElementById("messages").innerHTML = msg;
-// }
 $ (function(){
-
-var row1 = ['1','2','3','4'];
-var row2 = ['5','6','7','8'];
-var row3 = ['9','10','11','12'];
-var row4 = ['13','14','15','16'];
-var grid = [row1, row2, row3, row4];
+//notes for presentation - difficulty in getting array items to console.log and to add event listeners to each
+var grid = [
+  ['oak','cedar','fir','pine'], // grid[0][0], grid[0][1]
+  ['red','blue','green','yellow'], // grid[1][0], grid[1][1]
+  ['villa','spurs','city','united'],
+  ['table','chair','door','stool']
+];
 
 $('.box').on('click', function() {
-  console.log("You clicked box " + $(this).index());
-})
+  var idOfBox = $(this).text();
+  console.log(idOfBox);
+  // $(this).html(value)
+});
+
+var row = 0;
+var item = 0;
+$('.box').each(function(index, box) {
+  var $box = $(box);
+
+  $(this).text(grid[row][item]);
+  item++;
+
+  if(item > 3) {
+    item = 0;
+    row++;
+  }
+});
+
+
+// $ .each(grid, function(){
+//   (this).append($(".box"));
+// });
+// row1.forEach(funtion());{
+//   console.log(item, index);
+// }
+
 
 // $(row1['1']).click(function(){
 //   console.log("You clicked box 1")
