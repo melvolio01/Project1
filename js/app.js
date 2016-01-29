@@ -14,6 +14,8 @@ $('.box').on('click', function() {
   // $(this).html(value)
 });
 
+shuffle(grid);
+
 var row = 0;
 var item = 0;
 $('.box').each(function(index, box) {
@@ -28,6 +30,50 @@ $('.box').each(function(index, box) {
   }
 });
 
+// var grid;
+// shuffle(arr);
+// console.log(arr);
+
+function shuffle(arr){
+
+var arr = grid;
+var i = arr.length;
+var j;
+var temp;
+
+while(--i>0){
+  j = Math.floor(Math.random()*(i+1));
+  temp = arr[j];
+  arr[j] = arr[i];
+  arr[i] = temp;
+  }
+  return arr;
+}
+
+
+})
+
+
+  // var m = grid.length, t, i;
+  // while (m){
+  //   i = Math.floor(Math.random() * m--);
+
+  //   t = grid[m];
+  //   grid[m] = grid[i];
+  //   grid[i] = t;
+//   // }
+//   row = Math.random;
+//   item = Math.random;
+
+
+//    return grid; 
+// }
+
+
+// $.randomize = function(arr){
+//   for grid = arr.length; grid = parseInt(Math.random())
+//     return array;
+// };
 
 // $ .each(grid, function(){
 //   (this).append($(".box"));
@@ -52,35 +98,6 @@ $('.box').each(function(index, box) {
 // console.log(row1, row2, row3, row4)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
 
 
 
