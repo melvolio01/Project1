@@ -1,10 +1,10 @@
 $ (function(){
 //notes for presentation - difficulty in getting array items to console.log and to add event listeners to each
 var grid = [
-  ["oak","cedar","fir","pine"], // grid[0][0], grid[0][1]
-  ["red","blue","green","yellow"],// grid[1][0], grid[1][1]
-  ["villa","spurs","city","united"],
-  ["table","chair","door","stool"]
+  ["Oak","Cedar","Fir","Pine"], // grid[0][0], grid[0][1]
+  ["Red","Blue","Green","Yellow"],// grid[1][0], grid[1][1]
+  ["Villa","Spurs","City","United"],
+  ["Table","Chair","Door","Stool"]
 ];
 
 $('.box').on('click', function() {
@@ -13,9 +13,27 @@ $('.box').on('click', function() {
   // $(this).html(value)
 });
 
+// for (var i = 0, j = grid.length; i < j; i++);{
+//   console.log ($(this).index + $(this).length);
+
+// $.each(function(){
+//   $(this).  
+// }
+
+  // if ('box').on('click')<4{
+  //   console.log("Player 1's turn");
+  // }
+  // else{
+  //   console.log("Player 2's turn")
+  // }
+
+
+
+
 $('.box').on('click', function(){
   $(this).toggleClass('clicked'); 
 });
+
 // var grid = [
 //   ['oak', 'cedar', 'fir', 'pine'],
 //   ['red', 'blue', 'green', 'yellow'],
@@ -33,6 +51,7 @@ $('.box').on('click', function(){
 //   };
 //   res.push(arr)
 // }
+  
 shuffle(grid);
 shuffle(grid[0]);
 shuffle(grid[1]);
@@ -68,7 +87,6 @@ while(--i>0){
 }
 return grid;
 }
-})
-
+});
 
   
