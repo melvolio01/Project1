@@ -1,9 +1,5 @@
 body{
-  background-color: blue;
-}
-
-#messages{
-
+  background-color: #4067DB;
 }
 
 .grid{
@@ -13,9 +9,42 @@ body{
   position: fixed;
   top: 50%;
   left: 50%;
-  background-color: #38A3C7;
+  background-color: #40ABCF;
   transform: translate(-50%, -50%);
 }
+
+#buttons{
+  height: 58px;
+  width: 410px;
+  border: 5px solid #3F4345;
+  margin: 0 auto;
+  margin: top 10px;
+  background-color: #B8ACA0;
+  font-size: 20px;
+  font-family: arial;
+  text-align: center;
+  font-weight: bold;
+  line-height: 58px;
+}
+
+.buttons{
+  height: 56px;
+  width: 202px;
+  border: 2px solid #3F4345;
+  margin: 0 auto;
+  float: left;
+  margin: 0 auto;
+  background-color: #B8ACA0;
+}
+
+/*#resetGrid{
+  height: 50px;
+  width: 200px;
+  border: 4px solid #3F4345;
+  margin: 0 auto;
+  margin: top 10px;
+  background-color: #B8ACA0;
+}*/
 
 .box{
   padding-top: 2px;
@@ -32,7 +61,7 @@ body{
   text-align: center;
   /*getting text to center vertically was a pain*/
   line-height: 160px;
-  background-color: yellow;
+  background-color: #40ABCF;
 }
 
 .clicked{
@@ -45,13 +74,13 @@ body{
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 22px;
+  font-size: 21px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
   line-height: 160px;
-  background-color: green;
+  background-color: #99C789;
 }
 
 .groupA{
@@ -64,13 +93,13 @@ body{
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 22px;
+  font-size: 21px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
   line-height: 160px;
-  background-color: purple;
+  background-color: #9C6DBF;
 }
 
 .groupB{
@@ -83,13 +112,13 @@ body{
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 22px;
+  font-size: 21px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
   line-height: 160px;
-  background-color: red;
+  background-color: #B06B5B;
 }
 
 .groupC{
@@ -102,13 +131,13 @@ body{
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 22px;
+  font-size: 21px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
   line-height: 160px;
-  background-color: orange;
+  background-color: #CC8029;
 }
 
 .groupD{
@@ -121,11 +150,11 @@ body{
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 22px;
+  font-size: 21px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
   line-height: 160px;
-  background-color: gray;
+  background-color: #B8ACA0;
 }
