@@ -1,4 +1,3 @@
-
 $ (function(){
 //notes for presentation - difficulty in getting array items to console.log and to add event listeners to each
 var grid = [
@@ -14,7 +13,9 @@ $('.box').on('click', function() {
   // $(this).html(value)
 });
 
-
+$('.box').on('click', function(){
+  $(this).toggleClass('clicked'); 
+});
 // var grid = [
 //   ['oak', 'cedar', 'fir', 'pine'],
 //   ['red', 'blue', 'green', 'yellow'],
@@ -22,16 +23,16 @@ $('.box').on('click', function() {
 //   ['table', 'chair', 'door', 'stool']
 // ];
 
-var copy = grid.slice().join(" ").replace(/,/g, " ").split(" ");
-var res = [];
-while (copy.length) {
-  var arr = [];
-  while (arr.length < 4) {
-    var j = copy.splice(Math.floor(Math.random() * copy.length), 1)[0];
-    arr.push(j)
-  };
-  res.push(arr)
-}
+// var copy = grid.slice().join(" ").replace(/,/g, " ").split(" ");
+// var res = [];
+// while (copy.length) {
+//   var arr = [];
+//   while (arr.length < 4) {
+//     var j = copy.splice(Math.floor(Math.random() * copy.length), 1)[0];
+//     arr.push(j)
+//   };
+//   res.push(arr)
+// }
 shuffle(grid);
 shuffle(grid[0]);
 shuffle(grid[1]);
