@@ -69,7 +69,7 @@ shuffle(grid);
 
 
   
-$('#resetGrid').on('click', function(){
+$('#newGrid').on('click', function(){
   console.log("working");
   var count = 0;
   shuffle(grid);
@@ -98,6 +98,22 @@ function shuffle(grid){
   return grid;
 };
 
+function timer(){
+   setInterval(UpdateTime(), 1000);
+ };
+
+ var interval = 3*60; // 3 minutes
+ function updateTime(){
+   interval --;
+   if(interval == 0)
+   {
+       $(countdown).val("Time up - Computer Wins!");
+    }
+    else
+    {
+       $(countdown).text(interval + " seconds left");
+    }
+}
+
 });
 
-  

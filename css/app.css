@@ -13,18 +13,36 @@ body{
   transform: translate(-50%, -50%);
 }
 
-#resetGrid{
+#newGrid{
   height: 58px;
-  width: 410px;
-  border: 5px solid #3F4345;
-  margin: 0 auto;
-  margin: top 10px;
+  width: 150px;
+  border: 1px solid #3F4345;
+  float: left;
   background-color: #B8ACA0;
   font-size: 20px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   line-height: 58px;
+  position:  absolute;
+  bottom: 25px;
+}
+
+#countdown{
+  height: 100px;
+  width: 200px;
+  border: 1px solid #3F4345;
+  float: left;
+  background-color: #B8ACA0;
+  font-size: 20px;
+  font-family: arial;
+  text-align: center;
+  font-weight: bold;
+  line-height: 30px;
+  position:  absolute;
+  bottom: 25px;
+  left: 800px;
+  transform: translate(-50%, -50%)
 }
 
 .buttons{
@@ -36,15 +54,6 @@ body{
   margin: 0 auto;
   background-color: #B8ACA0;
 }
-
-/*#resetGrid{
-  height: 50px;
-  width: 200px;
-  border: 4px solid #3F4345;
-  margin: 0 auto;
-  margin: top 10px;
-  background-color: #B8ACA0;
-}*/
 
 .box{
   padding-top: 2px;
@@ -157,4 +166,17 @@ body{
   /*getting text to center vertically was a pain*/
   line-height: 160px;
   background-color: #B8ACA0;
+}
+
+#instructions{
+  height: 100px;
+  width: 400px;
+  border: 1px solid #3F4345;
+  float: left;
+  background-color: #B8ACA0;
+  font-size: 20px;
+  font-family: arial;
+  text-align: center;
+  line-height: 30px; 
+   
 }
