@@ -1,13 +1,16 @@
-$ (function(){
+$(function(){
 //notes for presentation - difficulty in getting array items to console.log and to add event listeners to each
-$window.load
 
-var grid = [
+var answers = [
   ["Oak","Cedar","Fir","Pine"], // grid[0][0], grid[0][1]
   ["Red","Blue","Green","Yellow"],// grid[1][0], grid[1][1]
   ["Villa","Spurs","City","United"],
   ["Table","Chair","Door","Stool"]
 ];
+
+var grid = answers.reduce(function(prev, current) {
+  return prev.concat(current);
+}, []);
 
 $('.box').on('click', function() {
   var idOfBox = $(this).text();
@@ -15,7 +18,7 @@ $('.box').on('click', function() {
   // $(this).html(value)
 });
 
-
+shuffle(grid);
 
 // for (var i = 0, j = grid.length; i < j; i++);{
 //   console.log ($(this).index + $(this).length);
@@ -55,42 +58,31 @@ $('.box').on('click', function(){
 //   };
 //   res.push(arr)
 // }
-$('.resetGrid').on('click', function(){
+$('#resetGrid').on('click', function(){
   shuffle(grid);
-  shuffle(grid[0]);
-  shuffle(grid[1]);
-  shuffle(grid[2]);
-  shuffle(grid[3]);
 });
 
-var row = 0;
-var item = 0;
 $('.box').each(function(index, box) {
   var $box = $(box);
 
-  $(this).text(grid[row][item]);
-  item++;
+  $box.text(grid[index]);
 
-  if(item > 3) {
-    item = 0;
-    row++;
-  }
 });
 
 function shuffle(grid){
+  var i = grid.length;
+  var j;
+  var temp;
 
-var i = grid.length;
-var j;
-var temp;
-
-while(--i>0){
+  while(--i>0){
     j = Math.floor(Math.random()*(i+1));
     temp = grid[j];
     grid[j] = grid[i];
     grid[i] = temp;
-}
-return grid;
-}
+  }
+  return grid;
+};
+
 });
 
   
