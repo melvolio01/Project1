@@ -13,14 +13,31 @@ var grid = answers.reduce(function(prev, current) {
   return prev.concat(current);
 }, []);
 
+var selectedAnswers = [];
+
 $('.box').on('click', function() {
   var idOfBox = $(this).text();
+  var answerRow;
   console.log(idOfBox);
+  selectedAnswers.push(idOfBox);
   $(this).toggleClass('clicked'); 
   count ++;
   console.log(count);
   if (count > 3) {
-    checkCorrect();
+    // checkCorrect()
+    answers.forEach(function(row, i) {
+      if(row.indexOf(idOfBox) !== -1) {
+        answerRow = row;
+      }
+    });
+    console.log(answerRow, selectedAnswers);
+    console.log(answerRow.every(function(currentValue) {
+      return selectedAnswers.indexOf(currentValue) !== -1;
+    }));
+    // $.each('click', index){
+
+    //}  
+    // };
   }
   // $(this).html(value)
 });
@@ -63,9 +80,11 @@ shuffle(grid);
 //   };
 //   res.push(arr)
 // }
-$('#resetGrid').on('click', function(){
+$('#resetGrid').on('click', function(){var count = 0;
+
   console.log("working");
-  shuffle(grid);
+  // shuffle(grid);
+
 });
 
 $('.box').each(function(index, box) {
