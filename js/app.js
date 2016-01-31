@@ -42,44 +42,11 @@ $('.box').on('click', function() {
   // $(this).html(value)
 });
 
+
 shuffle(grid);
 
-  // $('.box').on("click", function() {
-  // })
 
-
-// for (var i = 0, j = grid.length; i < j; i++);{
-//   console.log ($(this).index + $(this).length);
-
-// $.each(function(){
-//   $(this).  
-// }
-
-  // if ('box').on('click')<4{
-  //   console.log("Player 1's turn");
-  // }
-  // else{
-  //   console.log("Player 2's turn")
-  // }
-
-
-// var grid = [
-//   ['oak', 'cedar', 'fir', 'pine'],
-//   ['red', 'blue', 'green', 'yellow'],
-//   ['villa', 'spurs', 'city', 'united'],
-//   ['table', 'chair', 'door', 'stool']
-// ];
-
-// var copy = grid.slice().join(" ").replace(/,/g, " ").split(" ");
-// var res = [];
-// while (copy.length) {
-//   var arr = [];
-//   while (arr.length < 4) {
-//     var j = copy.splice(Math.floor(Math.random() * copy.length), 1)[0];
-//     arr.push(j)
-//   };
-//   res.push(arr)
-// }
+  
 $('#resetGrid').on('click', function(){var count = 0;
 
   console.log("working");
