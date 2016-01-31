@@ -24,7 +24,7 @@ $('.box').on('click', function() {
   count ++;
   console.log(count);
   if (count > 3) {
-    // checkCorrect()
+    // checkCorrect
     answers.forEach(function(row, i) {
       if(row.indexOf(idOfBox) !== -1) {
         answerRow = row;
@@ -34,6 +34,28 @@ $('.box').on('click', function() {
     console.log(answerRow.every(function(currentValue) {
       return selectedAnswers.indexOf(currentValue) !== -1;
     }));
+    
+    //bit confused here re how to get boxes re-colouring
+  if (selectedAnswers == answers[-1]) 
+      {$(this).toggleClass('box');
+      console.log("no match")
+        }
+    else if (selectedAnswers == answers[0])
+      {$(this).toggleClass('groupA');
+      console.log("You got Group A!")
+      }
+    else if (selectedAnswers == answers[1])
+      {$(this).toggleClass('groupB');
+      console.log("You got Group B!")
+      }
+    else if (selectedAnswers == answers[2])
+      {$(this).toggleClass('groupC');
+      console.log("You got Group C!")
+      }
+    else if (selectedAnswers == answers[3])
+      {$(this).toggleClass('groupD');
+      console.log("You got Group D!")
+      }
     // $.each('click', index){
 
     //}  
@@ -47,12 +69,13 @@ shuffle(grid);
 
 
   
-$('#resetGrid').on('click', function(){var count = 0;
-
+$('#resetGrid').on('click', function(){
   console.log("working");
-  // shuffle(grid);
+  var count = 0;
+  shuffle(grid);
 
-});
+})
+
 
 $('.box').each(function(index, box) {
   var $box = $(box);
