@@ -1,5 +1,6 @@
 $(function(){
 //notes for presentation - difficulty in getting array items to console.log and to add event listeners to each
+var count = 0;
 
 var answers = [
   ["Oak","Cedar","Fir","Pine"], // grid[0][0], grid[0][1]
@@ -15,10 +16,20 @@ var grid = answers.reduce(function(prev, current) {
 $('.box').on('click', function() {
   var idOfBox = $(this).text();
   console.log(idOfBox);
+  $(this).toggleClass('clicked'); 
+  count ++;
+  console.log(count);
+  if (count > 3) {
+    checkCorrect();
+  }
   // $(this).html(value)
 });
 
 shuffle(grid);
+
+  // $('.box').on("click", function() {
+  // })
+
 
 // for (var i = 0, j = grid.length; i < j; i++);{
 //   console.log ($(this).index + $(this).length);
@@ -34,12 +45,6 @@ shuffle(grid);
   //   console.log("Player 2's turn")
   // }
 
-
-
-
-$('.box').on('click', function(){
-  $(this).toggleClass('groupA'); 
-});
 
 // var grid = [
 //   ['oak', 'cedar', 'fir', 'pine'],
@@ -59,6 +64,7 @@ $('.box').on('click', function(){
 //   res.push(arr)
 // }
 $('#resetGrid').on('click', function(){
+  console.log("working");
   shuffle(grid);
 });
 

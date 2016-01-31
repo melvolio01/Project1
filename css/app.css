@@ -13,7 +13,7 @@ body{
   transform: translate(-50%, -50%);
 }
 
-#buttons{
+#resetGrid{
   height: 58px;
   width: 410px;
   border: 5px solid #3F4345;
