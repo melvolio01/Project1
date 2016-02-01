@@ -1,6 +1,8 @@
 $(function(){
 //notes for presentation - initial difficulty in getting array items to console.log and to add event listeners to each.
 var count = 0;
+var playerScore = 0;
+var lastGroupFound = 0;
 
 var answers = [
   ["Oak","Cedar","Fir","Pine"], // grid[0][0], grid[0][1]
@@ -18,50 +20,72 @@ var grid = answers.reduce(function(prev, current) {
 var selectedAnswers = [];
 
 $('.box').on('click', function() {
-  var idOfBox = $(this).text();
-  var answerRow;
-  console.log(idOfBox);
-  selectedAnswers.push(idOfBox);
-  $(this).toggleClass('clicked'); 
-  count ++;
-  console.log(count);
-  if (count > 3) {
-    // checkCorrect
-    answers.forEach(function(row, i) {
-      if(row.indexOf(idOfBox) !== -1) {
-        answerRow = row;
-      }
-    });
-    console.log(answerRow, selectedAnswers);
-    console.log(answerRow.every(function(currentValue) {
-      return selectedAnswers.indexOf(currentValue) !== -1;
-    }));
-    
-    //bit confused here re how to get boxes re-colouring
-  if (selectedAnswers == answers[-1]) 
-      {$(this).toggleClass('box');
-      console.log("no match")
-        }
-    else if (selectedAnswers == answers[0])
-      {$(this).toggleClass('groupA');
-      console.log("You got Group A!")
-      }
-    else if (selectedAnswers == answers[1])
-      {$(this).toggleClass('groupB');
-      console.log("You got Group B!")
-      }
-    else if (selectedAnswers == answers[2])
-      {$(this).toggleClass('groupC');
-      console.log("You got Group C!")
-      }
-    else if (selectedAnswers == answers[3])
-      {$(this).toggleClass('groupD');
-      console.log("You got Group D!")
-      }
-    // $.each('click', index){
 
-    //}  
-    // };
+  if(!$(this).hasClass('found')) {
+    var idOfBox = $(this).text();
+    var answerRow;
+
+    selectedAnswers.push(idOfBox);
+    $(this).toggleClass('clicked'); 
+    count ++;
+
+    if (count > 3) {
+      // checkCorrect
+      answers.forEach(function(row, i) {
+        if(row.indexOf(idOfBox) !== -1) {
+          answerRow = row;
+        }
+      });
+
+      var match = answerRow.every(function(currentValue) {
+        return selectedAnswers.indexOf(currentValue) !== -1;
+      });
+
+      var $selectedBoxes = $('.box.clicked');
+      $selectedBoxes.removeClass('clicked');
+
+      if(match) {
+        playerScore++;
+        lastGroupFound++;
+        $selectedBoxes.addClass("group" + lastGroupFound);
+        $selectedBoxes.addClass("found");
+      }
+
+      count = 0;
+      selectedAnswers = [];
+
+      
+      //bit confused here re how to get boxes re-colouring
+    // if (selectedAnswers == answers[-1]) 
+    //     {$(this).toggleClass('box');
+    //     console.log("no match");
+
+    //       }
+    //   else if (selectedAnswers == answers[0])
+    //     {$(this).toggleClass('groupA');
+    //     console.log("You got Group A!");
+    //     playerScore ++;
+    //     }
+    //   else if (selectedAnswers == answers[1])
+    //     {$(this).toggleClass('groupB');
+    //     console.log("You got Group B!");
+    //     playerScore ++;
+    //     }
+    //   else if (selectedAnswers == answers[2])
+    //     {$(this).toggleClass('groupC');
+    //     console.log("You got Group C!");
+    //     playerScore ++;
+    //     }
+    //   else if (selectedAnswers == answers[3])
+    //     {$(this).toggleClass('groupD');
+    //     console.log("You got Group D!");
+    //     playerScore ++;
+    //     }
+      // $.each('click', index){
+
+      //}  
+      // };
+    }
   }
   // $(this).html(value)
 });
@@ -111,10 +135,19 @@ function timer(){
  var interval = 3*60; // 3 minutes
  function updateTime(){
    interval --;
-   if(interval == 0)
-   {
+   
+    if (playerScore >=3)
+    {
+       $(countdown).stop("You solved the grid!")
+    }  
+
+
+    else if(interval == 0)
+    {
        $(countdown).val("Time up - Computer Wins!");
     }
+    
+    
     else
     {
        $(countdown).text(interval + " seconds left");
@@ -124,14 +157,14 @@ function timer(){
 });
 
 // [
-//   ["Oak","Cedar","Fir","Pine"], 
-//   ["Red","Blue","Green","Yellow"],
-//   ["Villa","Spurs","City","United"],
-//   ["Table","Chair","Door","Stool"]
+//   ["London","Paris","Moscow","Washington"], 
+//   ["Hatchback","Sedan","Estate","Coupe"],
+//   ["Michaelangelo","Leonardo","Raphael","Donatello"],
+//   ["Michelle","Yesterday","Hello, Goodbye","Help!"]
 // ];
 
 // [
-//   ["Oak","Cedar","Fir","Pine"], 
+//   ["Bears","Redskins","Fir","Pine"], 
 //   ["Red","Blue","Green","Yellow"],
 //   ["Villa","Spurs","City","United"],
 //   ["Table","Chair","Door","Stool"]

@@ -13,6 +13,36 @@ body{
   transform: translate(-50%, -50%);
 }
 
+#instructions{
+  height: 100px;
+  width: 400px;
+  border: 1px solid #3F4345;
+  float: left;
+  background-color: #B8ACA0;
+  font-size: 20px;
+  font-family: arial;
+  text-align: center;
+  line-height: 30px; 
+   
+}
+
+#score{
+  height: 100px;
+  width: 200px;
+  border: 1px solid #3F4345;
+  float: left;
+  background-color: #B8ACA0;
+  font-size: 20px;
+  font-family: arial;
+  text-align: center;
+  font-weight: bold;
+  line-height: 30px;
+  position:  absolute;
+  left: 800px;
+  top: 75px;
+  transform: translate(-50%, -50%)
+}
+
 #newGrid{
   height: 58px;
   width: 150px;
@@ -25,7 +55,7 @@ body{
   font-weight: bold;
   line-height: 58px;
   position:  absolute;
-  bottom: 25px;
+  bottom: 100px;
 }
 
 #countdown{
@@ -168,15 +198,3 @@ body{
   background-color: #B8ACA0;
 }
 
-#instructions{
-  height: 100px;
-  width: 400px;
-  border: 1px solid #3F4345;
-  float: left;
-  background-color: #B8ACA0;
-  font-size: 20px;
-  font-family: arial;
-  text-align: center;
-  line-height: 30px; 
-   
-}
