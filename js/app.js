@@ -3,6 +3,8 @@ $(function(){
 var count = 0;
 var playerScore = 0;
 var lastGroupFound = 0;
+var timeLeft=180;
+var time=setInterval(timer, 1000);
 var allAnswers = [
   [
     ["London","Paris","Moscow","Washington"], 
@@ -17,7 +19,7 @@ var allAnswers = [
     ["Epic","Trojan","EMI","RoughTrade"]
   ],
   [
-    ["Leo","Capricorn","Taurus","Aires"], 
+    ["Leo","Capricorn","Taurus","Aries"], 
     ["Kansas","Alaska","California","Wyoming"],
     ["Joyce","Austen","Conrad","Cervantes"],
     ["Anfield","Emirates","Hampden","Britannia"]
@@ -42,6 +44,7 @@ function setupBoard() {
   $('.box').each(function(index, box) {
     var $box = $(box);
     $box.text(grid[index]);
+    $box.attr("class", "box");
   });
 };
 
@@ -53,14 +56,13 @@ function getGrid() {
 
 setupBoard();
 
+//New Grid button was a pain - if a single group had been selected on initial board the same boxes would be highlighted on the New Grid. Resolved by 
 
 $('#newGrid').on('click', function() {
   setupBoard();
-  $selectedBoxes.removeClass('clicked');
   // var count = 0;
   // var playerScore = 0;
   // var lastGroupFound = 0;
-  return;
 });
 
 
@@ -134,8 +136,7 @@ function shuffle(grid){
 //Timer needed to make game player v computer - seems more straightforward to implement in short time than turn-based 1 and 2 player logic
 
 var timeLeft=180;
-
-var time=setInterval(timer, 1000); //1000 will  run it every 1 second
+// var time=setInterval(timer, 1000); //1000 will  run it every 1 second
 
 function timer()
 {
@@ -156,13 +157,11 @@ function timer()
   }
 
   else {
-     $('.timer').text("Time left " + timeLeft);
+     $('.timer').text("Time left: " + timeLeft);
      return;
   }
 
 }
-
-
 
 
 
