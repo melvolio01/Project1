@@ -59,10 +59,11 @@ setupBoard();
 //New Grid button was a pain - if a single group had been selected on initial board the same boxes would be highlighted on the New Grid. Resolved by 
 
 $('#newGrid').on('click', function() {
-  setupBoard();
-  timeLeft = 181;
   count = 0;
+  score = 0;
   playerScore = 0;
+  timeLeft = 181;
+  setupBoard();
 });
 
 
