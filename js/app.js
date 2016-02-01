@@ -23,7 +23,8 @@ var allAnswers = [
     ["Earthquake","Typhoon","Tsunami","Cyclone"],
     ["Hello!","Vogue","Empire","Good Housekeeping"],
     ["Airways","Museum","Red Cross","American Tobacco"]
-  ]
+  ],
+
 ];
 
 var answers;
