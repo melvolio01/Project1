@@ -1,11 +1,13 @@
 body{
-  background-image: 'WDI_Project1/images/connectingwallbackground.gif';
-  background-color: #3D75D7;
+  background-image: url(../images/connectingwallbackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 .grid{
-  height: 700px;
-  width: 999px;
+  height: 524px;
+  width: 748px;
   border:1px solid black;
   position: fixed;
   top: 50%;
@@ -15,64 +17,64 @@ body{
 }
 
 #instructions{
-  height: 100px;
-  width: 400px;
+  height: 75px;
+  width: 300px;
   border: 1px solid #3F4345;
   float: left;
   background-color: #B8ACA0;
-  font-size: 20px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
-  line-height: 30px; 
+  line-height: 23px; 
    
 }
 
 #score{
-  height: 125px;
-  width: 200px;
-  border: 1px solid #3F4345;
-  float: left;
-  background-color: #B8ACA0;
-  font-size: 20px;
-  font-family: arial;
-  text-align: center;
-  font-weight: bold;
-  line-height: 30px;
-  position:  absolute;
-  left: 800px;
-  top: 75px;
-  transform: translate(-50%, -50%)
-}
-
-#newGrid{
-  height: 58px;
+  height: 95px;
   width: 150px;
   border: 1px solid #3F4345;
   float: left;
   background-color: #B8ACA0;
-  font-size: 20px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
-  line-height: 58px;
+  line-height: 23px;
   position:  absolute;
-  bottom: 100px;
+  left: 600px;
+  top: 56px;
+  transform: translate(-50%, -50%)
 }
 
-.timer{
-  height: 58px;
-  width: 200px;
+#newGrid{
+  height: 44px;
+  width: 113px;
   border: 1px solid #3F4345;
   float: left;
   background-color: #B8ACA0;
-  font-size: 20px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
-  line-height: 30px;
+  line-height: 44px;
   position:  absolute;
-  bottom: 100px;
-  left: 800px;
+  bottom: 75px;
+}
+
+.timer{
+  height: 44px;
+  width: 150px;
+  border: 1px solid #3F4345;
+  float: left;
+  background-color: #B8ACA0;
+  font-size: 15px;
+  font-family: arial;
+  text-align: center;
+  font-weight: bold;
+  line-height: 23px;
+  position:  absolute;
+  bottom: 75px;
+  left: 600px;
   transform: translate(-50%, -50%)
 }
 
@@ -91,16 +93,16 @@ body{
   padding-right: 2px;
   padding-bottom: 2px;
   padding-left: 2px;
-  height: 168px;
-  width: 243px;
+  height: 125px;
+  width: 181px;
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   /*getting text to center vertically was a pain*/
-  line-height: 160px;
+  line-height: 120px;
   background-color: #40ABCF;
 }
 
@@ -109,17 +111,17 @@ body{
   padding-right: 2px;
   padding-bottom: 2px;
   padding-left: 2px;
-  height: 168px;
-  width: 243px;
+  height: 125px;
+  width: 181px;
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 21px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
-  line-height: 160px;
+  line-height: 120px;
   background-color: #99C789;
 }
 
@@ -128,17 +130,17 @@ body{
   padding-right: 2px;
   padding-bottom: 2px;
   padding-left: 2px;
-  height: 168px;
-  width: 243px;
+  height: 125px;
+  width: 181px;
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 21px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
-  line-height: 160px;
+  line-height: 120px;
   background-color: #9C6DBF;
 }
 
@@ -147,17 +149,17 @@ body{
   padding-right: 2px;
   padding-bottom: 2px;
   padding-left: 2px;
-  height: 168px;
-  width: 243px;
+  height: 125px;
+  width: 181px;
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 21px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
-  line-height: 160px;
+  line-height: 120px;
   background-color: #B06B5B;
 }
 
@@ -166,17 +168,17 @@ body{
   padding-right: 2px;
   padding-bottom: 2px;
   padding-left: 2px;
-  height: 168px;
-  width: 243px;
+  height: 125px;
+  width: 181px;
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 21px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
-  line-height: 160px;
+  line-height: 120px;
   background-color: #CC8029;
 }
 
@@ -185,17 +187,17 @@ body{
   padding-right: 2px;
   padding-bottom: 2px;
   padding-left: 2px;
-  height: 168px;
-  width: 243px;
+  height: 125px;
+  width: 181px;
   border: 1px solid black;
   float: left;
   margin: 0 auto;
-  font-size: 21px;
+  font-size: 15px;
   font-family: arial;
   text-align: center;
   font-weight: bold;
   /*getting text to center vertically was a pain*/
-  line-height: 160px;
+  line-height: 120px;
   background-color: #B8ACA0;
 }
 
