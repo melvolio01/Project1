@@ -60,9 +60,9 @@ setupBoard();
 
 $('#newGrid').on('click', function() {
   setupBoard();
-  // var count = 0;
-  // var playerScore = 0;
-  // var lastGroupFound = 0;
+  timeLeft = 181;
+  count = 0;
+  playerScore = 0;
 });
 
 
@@ -166,8 +166,3 @@ function timer()
 
 
 });
-
-
-
-
-
