@@ -4,6 +4,7 @@ var count = 0;
 var playerScore = 0;
 var lastGroupFound = 0;
 
+
 var answers = [
   ["Oak","Cedar","Fir","Pine"], // grid[0][0], grid[0][1]
   ["Red","Blue","Green","Yellow"],// grid[1][0], grid[1][1]
@@ -46,45 +47,18 @@ $('.box').on('click', function() {
 
       if(match) {
         playerScore++;
+        console.log(playerScore);
         lastGroupFound++;
         $selectedBoxes.addClass("group" + lastGroupFound);
         $selectedBoxes.addClass("found");
+        $('#playerScore').text(playerScore);
       }
 
       count = 0;
       selectedAnswers = [];
 
       
-      //bit confused here re how to get boxes re-colouring
-    // if (selectedAnswers == answers[-1]) 
-    //     {$(this).toggleClass('box');
-    //     console.log("no match");
-
-    //       }
-    //   else if (selectedAnswers == answers[0])
-    //     {$(this).toggleClass('groupA');
-    //     console.log("You got Group A!");
-    //     playerScore ++;
-    //     }
-    //   else if (selectedAnswers == answers[1])
-    //     {$(this).toggleClass('groupB');
-    //     console.log("You got Group B!");
-    //     playerScore ++;
-    //     }
-    //   else if (selectedAnswers == answers[2])
-    //     {$(this).toggleClass('groupC');
-    //     console.log("You got Group C!");
-    //     playerScore ++;
-    //     }
-    //   else if (selectedAnswers == answers[3])
-    //     {$(this).toggleClass('groupD');
-    //     console.log("You got Group D!");
-    //     playerScore ++;
-    //     }
-      // $.each('click', index){
-
-      //}  
-      // };
+    
     }
   }
   // $(this).html(value)

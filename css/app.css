@@ -26,7 +26,7 @@ body{
    
 }
 
-#score{
+.score{
   height: 100px;
   width: 200px;
   border: 1px solid #3F4345;
@@ -122,7 +122,7 @@ body{
   background-color: #99C789;
 }
 
-.groupA{
+.group1{
   padding-top: 2px;
   padding-right: 2px;
   padding-bottom: 2px;
@@ -141,7 +141,7 @@ body{
   background-color: #9C6DBF;
 }
 
-.groupB{
+.group2{
   padding-top: 2px;
   padding-right: 2px;
   padding-bottom: 2px;
@@ -160,7 +160,7 @@ body{
   background-color: #B06B5B;
 }
 
-.groupC{
+.group3{
   padding-top: 2px;
   padding-right: 2px;
   padding-bottom: 2px;
@@ -179,7 +179,7 @@ body{
   background-color: #CC8029;
 }
 
-.groupD{
+.group4{
   padding-top: 2px;
   padding-right: 2px;
   padding-bottom: 2px;
