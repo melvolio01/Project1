@@ -30,8 +30,9 @@ var answers;
 var grid;
 
 function setupBoard() {
-  count = 0;
   playerScore = 0;
+  count = 0;
+  score = 0;
   lastGroupFound = 0;
   answers = allAnswers[Math.floor(Math.random() * 3)];
   grid = getGrid();
@@ -59,11 +60,11 @@ setupBoard();
 //New Grid button was a pain - if a single group had been selected on initial board the same boxes would be highlighted on the New Grid. Resolved by 
 
 $('#newGrid').on('click', function() {
+  setupBoard();
   count = 0;
   score = 0;
   playerScore = 0;
   timeLeft = 181;
-  setupBoard();
 });
 
 
