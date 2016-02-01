@@ -79,7 +79,7 @@ $('.box').on('click', function() {
     count++;
 
     if (count > 3) {
-      // checkCorrect
+      // logic to check whether a group has been matched - if so, styles in CSS applied
       answers.forEach(function(row, i) {
         if(row.indexOf(idOfBox) !== -1) {
           answerRow = row;
@@ -113,9 +113,10 @@ $('.box').on('click', function() {
     
     }
   }
-  // $(this).html(value)
+
 });
 
+//Fisher-Yates Shuffle used to re-arrange answers into the grid - didn't fully work with answers in their groups so arrays had to be concatenated down.
 
 function shuffle(grid){
   var i = grid.length;
@@ -131,10 +132,9 @@ function shuffle(grid){
   return grid;
 };
 
-//Timer needed to make game player v computer - seems more straightforward to implement in short time than turn-based 1 and 2 player logic
+//Timer used to make game player v computer, rather than turn-based 1 and 2 player logic.
 
 var timeLeft=181;
-// var time=setInterval(timer, 1000); //1000 will  run it every 1 second
 
 function timer()
 {
@@ -151,6 +151,8 @@ function timer()
   else if (playerScore == 4) {
     $('#playerScore').text("Well done, you solved the wall!");
     $('.timer').text("Player Wins!");
+    $(".GuileThemeSNES.mp3").trigger('load');
+    audio 
     return;
   }
 
