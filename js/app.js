@@ -1,5 +1,5 @@
 $(function(){
-//notes for presentation - initial difficulty in getting array items to console.log and to add event listeners to each.
+
 var count = 0;
 var playerScore = 0;
 var lastGroupFound = 0;
@@ -7,22 +7,22 @@ var timeLeft=180;
 var time=setInterval(timer, 1000);
 var allAnswers = [
   [
-    ["London","Paris","Moscow","Washington"], 
-    ["Hatchback","Sedan","Estate","Coupe"],
-    ["Michaelangelo","Leonardo","Raphael","Donatello"],
-    ["Michelle","Yesterday","Hello, Goodbye","Help!"]
+    ["Raphael","Donatello","Leonardo","April"], 
+    ["Michaelangelo","Boticelli","Titian","Giorgone"],
+    ["June","August","September","January"],
+    ["May","Gove","Osborne","Hammond"]
   ],
   [
-    ["Bears","Redskins","Chiefs","Cowboys"], 
-    ["Ryu","Ken","Zangief","Dhalsim"],
-    ["Soul","Funk","Punk","Jazz"],
-    ["Epic","Trojan","EMI","RoughTrade"]
+    ["Kerry","Clare","Tyrone","Cork"], 
+    ["Ryu","Guile","Sagat","E-Honda"],
+    ["Ken","Rita","Sally","Norris"],
+    ["Vega","Pollux","Sirius","Polaris"]
   ],
   [
-    ["Leo","Capricorn","Taurus","Aries"], 
-    ["Kansas","Alaska","California","Wyoming"],
-    ["Joyce","Austen","Conrad","Cervantes"],
-    ["Anfield","Emirates","Hampden","Britannia"]
+    ["Virgin","Prayer","Hurricane","Rolling Stone"], 
+    ["Earthquake","Typhoon","Tsunami","Cyclone"],
+    ["Hello!","Vogue","Empire","Good Housekeeping"],
+    ["Airways","Museum","Red Cross","American Tobacco"]
   ]
 ];
 
@@ -36,8 +36,6 @@ function setupBoard() {
   lastGroupFound = 0;
   answers = allAnswers[Math.floor(Math.random() * 3)];
   grid = getGrid();
-
-  //Grid shuffle solution using the Fisher-Yates algorithm - worked with answers in as much as I could shuffle whole rows up and down, and could shuffle within the rows. Problem was that the answers would not shuffle between groups. This was resolved using .concat to reduce the 'answers' array down to a single 'grid' array containing all index positions.
 
   shuffle(grid);
 
@@ -56,8 +54,7 @@ function getGrid() {
 };
 
 setupBoard();
-
-//New Grid button was a pain - if a single group had been selected on initial board the same boxes would be highlighted on the New Grid. Resolved by 
+ 
 
 $('#newGrid').on('click', function() {
   setupBoard();
@@ -67,8 +64,6 @@ $('#newGrid').on('click', function() {
   timeLeft = 181;
 });
 
-
-//selectedAnswers array helped to isolate a group of 4 selected answers so that these can then be used for group classification.
 
 var selectedAnswers = [];
 
@@ -137,7 +132,7 @@ function shuffle(grid){
 
 //Timer needed to make game player v computer - seems more straightforward to implement in short time than turn-based 1 and 2 player logic
 
-var timeLeft=180;
+var timeLeft=181;
 // var time=setInterval(timer, 1000); //1000 will  run it every 1 second
 
 function timer()

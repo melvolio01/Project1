@@ -3,7 +3,82 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
 
+
 }
+
+.infoButtons{
+  height: 600px;
+  width: 300px;
+  float:left;
+  background-color: transparent;
+
+}
+
+#instructions{
+  height: 120px;
+  width: 240px;
+  border: 1px solid #3F4345;
+  border-radius: 10px;
+  float: left;
+  background-color: #C0C0C0;
+  font-size: 15px;
+  font-family: arial;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  padding: 10px;
+  top: 100px;
+  line-height: 220%;
+}
+
+#score{
+  height: 95px;
+  width: 150px;
+  border: 1px solid #3F4345;
+  border-radius: 10px;
+  float: left;
+  background-color: #C0C0C0;
+  font-size: 15px;
+  font-family: arial;
+  font-weight: bold;
+  text-align: center;
+  line-height: 23px;
+  position: absolute;
+  top: 250px;
+}
+
+#newGrid{
+  height: 44px;
+  width: 113px;
+  border: 1px solid #3F4345;
+  border-radius: 10px;
+  float: left;
+  background-color:#C0C0C0;
+  font-size: 15px;
+  font-family: arial;
+  text-align: center;
+  font-weight: bold;
+  line-height: 44px;
+  position: absolute;
+  bottom: 100px;
+}
+
+.timer{
+  height: 44px;
+  width: 125px;
+  border: 1px solid #3F4345;
+  border-radius: 10px;
+  float: left;
+  background-color:#C0C0C0;
+  font-size: 15px;
+  font-family: arial;
+  font-weight: bold;
+  text-align: center;
+  line-height: 44px;
+  bottom: 300px;
+  
+}
+
 
 .grid{
   height: 524px;
@@ -16,77 +91,8 @@ body{
   transform: translate(-50%, -50%);
 }
 
-#instructions{
-  height: 75px;
-  width: 300px;
-  border: 1px solid #3F4345;
-  float: left;
-  background-color: #B8ACA0;
-  font-size: 15px;
-  font-family: arial;
-  text-align: center;
-  line-height: 23px; 
-   
-}
 
-#score{
-  height: 95px;
-  width: 150px;
-  border: 1px solid #3F4345;
-  float: left;
-  background-color: #B8ACA0;
-  font-size: 15px;
-  font-family: arial;
-  text-align: center;
-  font-weight: bold;
-  line-height: 23px;
-  position:  absolute;
-  left: 600px;
-  top: 56px;
-  transform: translate(-50%, -50%)
-}
 
-#newGrid{
-  height: 44px;
-  width: 113px;
-  border: 1px solid #3F4345;
-  float: left;
-  background-color: #B8ACA0;
-  font-size: 15px;
-  font-family: arial;
-  text-align: center;
-  font-weight: bold;
-  line-height: 44px;
-  position:  absolute;
-  bottom: 75px;
-}
-
-.timer{
-  height: 44px;
-  width: 150px;
-  border: 1px solid #3F4345;
-  float: left;
-  background-color: #B8ACA0;
-  font-size: 15px;
-  font-family: arial;
-  text-align: center;
-  font-weight: bold;
-  line-height: 23px;
-  position:  absolute;
-  bottom: 75px;
-  left: 600px;
-  transform: translate(-50%, -50%)
-}
-
-.buttons{
-  height: 56px;
-  width: 202px;
-  border: 2px solid #3F4345;
-  margin: 0 auto;
-  float: left;
-  margin: 0 auto;
-  background-color: #B8ACA0;
-}
 
 .box{
   padding-top: 2px;
@@ -101,7 +107,6 @@ body{
   font-size: 15px;
   font-family: arial;
   text-align: center;
-  /*getting text to center vertically was a pain*/
   line-height: 120px;
   background-color: #40ABCF;
 }
@@ -119,8 +124,6 @@ body{
   font-size: 15px;
   font-family: arial;
   text-align: center;
-  font-weight: bold;
-  /*getting text to center vertically was a pain*/
   line-height: 120px;
   background-color: #99C789;
 }
@@ -138,8 +141,6 @@ body{
   font-size: 15px;
   font-family: arial;
   text-align: center;
-  font-weight: bold;
-  /*getting text to center vertically was a pain*/
   line-height: 120px;
   background-color: #9C6DBF;
 }
@@ -157,8 +158,6 @@ body{
   font-size: 15px;
   font-family: arial;
   text-align: center;
-  font-weight: bold;
-  /*getting text to center vertically was a pain*/
   line-height: 120px;
   background-color: #B06B5B;
 }
@@ -176,8 +175,6 @@ body{
   font-size: 15px;
   font-family: arial;
   text-align: center;
-  font-weight: bold;
-  /*getting text to center vertically was a pain*/
   line-height: 120px;
   background-color: #CC8029;
 }
@@ -195,8 +192,6 @@ body{
   font-size: 15px;
   font-family: arial;
   text-align: center;
-  font-weight: bold;
-  /*getting text to center vertically was a pain*/
   line-height: 120px;
   background-color: #B8ACA0;
 }
