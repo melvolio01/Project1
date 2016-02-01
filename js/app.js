@@ -1,5 +1,5 @@
 $(function(){
-//notes for presentation - difficulty in getting array items to console.log and to add event listeners to each
+//notes for presentation - initial difficulty in getting array items to console.log and to add event listeners to each.
 var count = 0;
 
 var answers = [
@@ -12,6 +12,8 @@ var answers = [
 var grid = answers.reduce(function(prev, current) {
   return prev.concat(current);
 }, []);
+
+//selectedAnswers array helped to isolate a group of 4 selected answers so that these can then be used for group classification.
 
 var selectedAnswers = [];
 
@@ -65,6 +67,8 @@ $('.box').on('click', function() {
 });
 
 
+//Grid shuffle solution using the Fisher-Yates algorithm - worked with answers in as much as I could shuffle whole rows up and down, and could shuffle within the rows. Problem was that the answers would not shuffle between groups. This was resolved using .concat to reduce the 'answers' array down to a single 'grid' array containing all index positions.
+
 shuffle(grid);
 
 
@@ -98,6 +102,8 @@ function shuffle(grid){
   return grid;
 };
 
+//Timer needed to make game player v computer - seems more straightforward to implement in short time than turn-based 1 and 2 player logic
+
 function timer(){
    setInterval(UpdateTime(), 1000);
  };
@@ -116,4 +122,29 @@ function timer(){
 }
 
 });
+
+// [
+//   ["Oak","Cedar","Fir","Pine"], 
+//   ["Red","Blue","Green","Yellow"],
+//   ["Villa","Spurs","City","United"],
+//   ["Table","Chair","Door","Stool"]
+// ];
+
+// [
+//   ["Oak","Cedar","Fir","Pine"], 
+//   ["Red","Blue","Green","Yellow"],
+//   ["Villa","Spurs","City","United"],
+//   ["Table","Chair","Door","Stool"]
+// ];
+
+// [
+//   ["Oak","Cedar","Fir","Pine"], 
+//   ["Red","Blue","Green","Yellow"],
+//   ["Villa","Spurs","City","United"],
+//   ["Table","Chair","Door","Stool"]
+// ];
+
+
+
+
 
