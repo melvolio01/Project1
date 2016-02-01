@@ -3,32 +3,80 @@ $(function(){
 var count = 0;
 var playerScore = 0;
 var lastGroupFound = 0;
-
-
-var answers = [
-  ["Oak","Cedar","Fir","Pine"], // grid[0][0], grid[0][1]
-  ["Red","Blue","Green","Yellow"],// grid[1][0], grid[1][1]
-  ["Villa","Spurs","City","United"],
-  ["Table","Chair","Door","Stool"]
+var allAnswers = [
+  [
+    ["London","Paris","Moscow","Washington"], 
+    ["Hatchback","Sedan","Estate","Coupe"],
+    ["Michaelangelo","Leonardo","Raphael","Donatello"],
+    ["Michelle","Yesterday","Hello, Goodbye","Help!"]
+  ],
+  [
+    ["Bears","Redskins","Chiefs","Cowboys"], 
+    ["Ryu","Ken","Zangief","Dhalsim"],
+    ["Soul","Funk","Punk","Jazz"],
+    ["Epic","Trojan","EMI","RoughTrade"]
+  ],
+  [
+    ["Leo","Capricorn","Taurus","Aires"], 
+    ["Kansas","Alaska","California","Wyoming"],
+    ["Joyce","Austen","Conrad","Cervantes"],
+    ["Anfield","Emirates","Hampden","Britannia"]
+  ]
 ];
 
-var grid = answers.reduce(function(prev, current) {
-  return prev.concat(current);
-}, []);
+var answers;
+var grid;
+
+function setupBoard() {
+  count = 0;
+  playerScore = 0;
+  lastGroupFound = 0;
+  answers = allAnswers[Math.floor(Math.random() * 3)];
+  grid = getGrid();
+
+  //Grid shuffle solution using the Fisher-Yates algorithm - worked with answers in as much as I could shuffle whole rows up and down, and could shuffle within the rows. Problem was that the answers would not shuffle between groups. This was resolved using .concat to reduce the 'answers' array down to a single 'grid' array containing all index positions.
+
+  shuffle(grid);
+
+
+  $('.box').each(function(index, box) {
+    var $box = $(box);
+    $box.text(grid[index]);
+  });
+};
+
+function getGrid() {
+  return answers.reduce(function(prev, current) {
+    return prev.concat(current);
+  }, []);
+};
+
+setupBoard();
+
+
+$('#newGrid').on('click', function() {
+  setupBoard();
+  $selectedBoxes.removeClass('clicked');
+  // var count = 0;
+  // var playerScore = 0;
+  // var lastGroupFound = 0;
+  return;
+});
+
 
 //selectedAnswers array helped to isolate a group of 4 selected answers so that these can then be used for group classification.
 
 var selectedAnswers = [];
 
 $('.box').on('click', function() {
-
+  console.log("CLICKED", count);
   if(!$(this).hasClass('found')) {
     var idOfBox = $(this).text();
     var answerRow;
 
     selectedAnswers.push(idOfBox);
     $(this).toggleClass('clicked'); 
-    count ++;
+    count++;
 
     if (count > 3) {
       // checkCorrect
@@ -69,27 +117,6 @@ $('.box').on('click', function() {
 });
 
 
-//Grid shuffle solution using the Fisher-Yates algorithm - worked with answers in as much as I could shuffle whole rows up and down, and could shuffle within the rows. Problem was that the answers would not shuffle between groups. This was resolved using .concat to reduce the 'answers' array down to a single 'grid' array containing all index positions.
-
-shuffle(grid);
-
-
-  
-$('#newGrid').on('click', function(){
-  console.log("working");
-  var count = 0;
-  shuffle(grid);
-
-})
-
-
-$('.box').each(function(index, box) {
-  var $box = $(box);
-
-  $box.text(grid[index]);
-
-});
-
 function shuffle(grid){
   var i = grid.length;
   var j;
@@ -106,22 +133,33 @@ function shuffle(grid){
 
 //Timer needed to make game player v computer - seems more straightforward to implement in short time than turn-based 1 and 2 player logic
 
-var count=180;
+var timeLeft=180;
 
-var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+var time=setInterval(timer, 1000); //1000 will  run it every 1 second
 
 function timer()
 {
-  count=count-1;
-  if (count <= 0)
+  timeLeft=timeLeft-1;
+  if (timeLeft <= 0)
   {
-     clearInterval(counter);
-     //counter ended, do something here
+    clearInterval(time);
+    $('#playerScore').text("Computer wins! You scored " + playerScore + " points");
+    $('.timer').text("Time up!");  
      return;
   }
-    console.log(count);
-    $('#countdown').text(count);
-  //Do code for showing the number of seconds here
+   
+
+  else if (playerScore == 4) {
+    $('#playerScore').text("Well done, you solved the wall!");
+    $('.timer').text("Player Wins!");
+    return;
+  }
+
+  else {
+     $('.timer').text("Time left " + timeLeft);
+     return;
+  }
+
 }
 
 
@@ -129,27 +167,6 @@ function timer()
 
 
 });
-
-// [
-//   ["London","Paris","Moscow","Washington"], 
-//   ["Hatchback","Sedan","Estate","Coupe"],
-//   ["Michaelangelo","Leonardo","Raphael","Donatello"],
-//   ["Michelle","Yesterday","Hello, Goodbye","Help!"]
-// ];
-
-// [
-//   ["Bears","Redskins","Fir","Pine"], 
-//   ["Red","Blue","Green","Yellow"],
-//   ["Villa","Spurs","City","United"],
-//   ["Table","Chair","Door","Stool"]
-// ];
-
-// [
-//   ["Oak","Cedar","Fir","Pine"], 
-//   ["Red","Blue","Green","Yellow"],
-//   ["Villa","Spurs","City","United"],
-//   ["Table","Chair","Door","Stool"]
-// ];
 
 
 

@@ -27,7 +27,7 @@ body{
 }
 
 .score{
-  height: 100px;
+  height: 125px;
   width: 200px;
   border: 1px solid #3F4345;
   float: left;
@@ -58,8 +58,8 @@ body{
   bottom: 100px;
 }
 
-.countdown{
-  height: 100px;
+.timer{
+  height: 58px;
   width: 200px;
   border: 1px solid #3F4345;
   float: left;
@@ -70,7 +70,7 @@ body{
   font-weight: bold;
   line-height: 30px;
   position:  absolute;
-  bottom: 25px;
+  bottom: 100px;
   left: 800px;
   transform: translate(-50%, -50%)
 }
