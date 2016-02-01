@@ -45,12 +45,16 @@ $('.box').on('click', function() {
       var $selectedBoxes = $('.box.clicked');
       $selectedBoxes.removeClass('clicked');
 
+
+
       if(match) {
         playerScore++;
         console.log(playerScore);
         lastGroupFound++;
         $selectedBoxes.addClass("group" + lastGroupFound);
         $selectedBoxes.addClass("found");
+
+        //Couldn't quite get syntax right here, solved by adding a <p> tag into the html file
         $('#playerScore').text(playerScore);
       }
 
@@ -102,31 +106,27 @@ function shuffle(grid){
 
 //Timer needed to make game player v computer - seems more straightforward to implement in short time than turn-based 1 and 2 player logic
 
-function timer(){
-   setInterval(UpdateTime(), 1000);
- };
+var count=180;
 
- var interval = 3*60; // 3 minutes
- function updateTime(){
-   interval --;
-   
-    if (playerScore >=3)
-    {
-       $(countdown).stop("You solved the grid!")
-    }  
+var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 
-
-    else if(interval == 0)
-    {
-       $(countdown).val("Time up - Computer Wins!");
-    }
-    
-    
-    else
-    {
-       $(countdown).text(interval + " seconds left");
-    }
+function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     //counter ended, do something here
+     return;
+  }
+    console.log(count);
+    $('#countdown').text(count);
+  //Do code for showing the number of seconds here
 }
+
+
+
+
 
 });
 

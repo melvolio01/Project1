@@ -58,7 +58,7 @@ body{
   bottom: 100px;
 }
 
-#countdown{
+.countdown{
   height: 100px;
   width: 200px;
   border: 1px solid #3F4345;
