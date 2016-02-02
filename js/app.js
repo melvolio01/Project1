@@ -22,7 +22,7 @@ var allAnswers = [
     ["Virgin","Prayer","Hurricane","Rolling Stone"], 
     ["Earthquake","Typhoon","Tsunami","Cyclone"],
     ["Hello!","Vogue","Empire","Good Housekeeping"],
-    ["Airways","Museum","Red Cross","American Tobacco"]
+    ["Airways","Museum","Sea Power","American Tobacco"]
   ],
 
 ];
