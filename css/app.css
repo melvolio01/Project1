@@ -2,7 +2,7 @@ body{
   background-image: url(../images/connectingwallbackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-
+  height: 100vh;
 
 }
 
@@ -82,7 +82,7 @@ body{
 
 .grid{
   height: 524px;
-  width: 748px;
+  width: 749px;
   border:1px solid black;
   position: fixed;
   top: 50%;

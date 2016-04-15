@@ -24,7 +24,13 @@ var allAnswers = [
     ["Hello!","Vogue","Empire","Good Housekeeping"],
     ["Airways","Museum","Sea Power","American Tobacco"]
   ],
-
+  [
+    ["Luck","Madonna","Midnight","Grey"], 
+    ["Tea","Noon","Life","Time"],
+    ["Frozen Planet","Africa","The Hunt","Nature's Great Events"],
+    ["Journey","Sting","Prince","Falco"]
+  ]
+  
 ];
 
 var answers;
@@ -134,7 +140,10 @@ function shuffle(grid){
 
 //Timer used to make game player v computer, rather than turn-based 1 and 2 player logic.
 
-var timeLeft=181;
+var timeLeft = 181;
+var minutes  = Math.floor(timeLeft / 60);
+var seconds  = timeLeft - minutes * 60;
+var clock    = minutes + ':' + seconds;
 
 function timer()
 {
@@ -151,8 +160,6 @@ function timer()
   else if (playerScore == 4) {
     $('#playerScore').text("Well done, you solved the wall!");
     $('.timer').text("Player Wins!");
-    $(".GuileThemeSNES.mp3").trigger('load');
-    audio 
     return;
   }
 
@@ -162,7 +169,6 @@ function timer()
   }
 
 }
-
 
 
 });

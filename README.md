@@ -15,7 +15,6 @@ How it works
 
 Banks of 'Answers' are held within arrays which randomise using a shuffleGrid function, based in part on the Fisher-Yates Shuffle. This shuffle proved to be problematic because answers would shuffle within the Answer arrays but not between them. This was resolved using .concat to reduce the 'answers' array down to a single 'grid' array containing all index positions. (line 53 of code)
 
-
 Randomized answers are displayed on-screen and can be selected in groups of four. CSS classes were created for 'clicked' (to highlight boxes which have been selected), and then for each of 4 groups (group1, group2, group3, group4).
 
 A timer function was added to create a countdown timer (from 181 to 0) whilst a count variable, incrementing from 0 to 4, was used for win logic/
